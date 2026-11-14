@@ -7,18 +7,26 @@ export const site = {
   name: "Abdul",
   handle: "abdul27c",
   role: "Cloud Security & DevSecOps Engineer",
+  // Hero headline; `accent` gets the green→cyan gradient.
+  headline: { lead: "Securing AI Systems &", accent: "Cloud Infrastructure", tail: "at Scale" },
   tagline:
-    "From resolving customer problems to securing the systems behind them. I build guardrails, scanners, and pipelines that keep cloud workloads safe by default.",
+    "DevSecOps Engineer & Cloud Security Practitioner building production-grade runtime guardrails, automated compliance pipelines, and secure cloud architectures.",
   focus: ["Python", "AWS", "Terraform", "Cloud Security", "CI/CD", "Runtime Security"],
   links: {
     github: "https://github.com/abdul27c",
-    // TODO: replace with your LinkedIn profile URL
-    linkedin: "https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE",
-    // TODO: replace with your professional email address
-    email: "you@example.com",
+    linkedin: "https://www.linkedin.com/in/abdallahhatem?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    email: "abdulmwork@outlook.com",
   },
-  // TODO: replace YOUR_VIDEO_ID with the YouTube video ID of your walkthrough
-  walkthroughVideoId: "YOUR_VIDEO_ID",
+  /**
+   * Video slots. Each accepts a YouTube video ID ("dQw4w9WgXcQ") or any YouTube
+   * URL (youtu.be/…, youtube.com/watch?v=…, /embed/…, /shorts/…).
+   * Leave as an empty string to show the "Coming soon" placeholder — the layout
+   * stays identical either way.
+   */
+  videos: {
+    intro: "",
+    agentProxyWalkthrough: "",
+  },
 } as const;
 
 export type Project = {
@@ -29,7 +37,10 @@ export type Project = {
   highlights: string[];
   stack: string[];
   repo?: string;
-  hasVideo?: boolean;
+  /** Inline video embed (flagship card) — a key of `site.videos`. */
+  videoKey?: keyof typeof site.videos;
+  /** External walkthrough link, shown as a "Walkthrough" button next to "Source". */
+  walkthroughUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -46,7 +57,7 @@ export const projects: Project[] = [
     ],
     stack: ["FastAPI", "Pydantic", "Docker", "GitHub Actions", "OWASP LLM"],
     repo: "https://github.com/abdul27c",
-    hasVideo: true,
+    videoKey: "agentProxyWalkthrough",
   },
   {
     id: "infraguard",
@@ -75,6 +86,7 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "AWS Cost Explorer", "boto3", "CloudWatch"],
     repo: "https://github.com/abdul27c",
+    walkthroughUrl: "https://youtu.be/Um2ZfHNV4kQ?feature=shared",
   },
   {
     id: "ai-token-optimizer",

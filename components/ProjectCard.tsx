@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Youtube } from "lucide-react";
 import type { Project } from "@/lib/site";
 import { site } from "@/lib/site";
 import YouTubeEmbed from "./YouTubeEmbed";
@@ -43,23 +43,46 @@ export default function ProjectCard({ project, featured = false, className = "" 
           ))}
         </ul>
 
-        {project.repo && (
-          <a
-            href={project.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex w-fit items-center gap-1.5 font-mono text-sm text-fog-100 transition-colors hover:text-signal lg:mt-auto lg:pt-6"
-          >
-            <Github className="h-4 w-4" aria-hidden />
-            view source
-            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
-          </a>
+        {(project.repo || project.walkthroughUrl) && (
+          <div className="mt-6 flex flex-wrap gap-2 lg:mt-auto lg:pt-6">
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} source code`}
+                className="inline-flex items-center gap-1.5 rounded-md border border-ink-600 px-3 py-1.5 font-mono text-xs text-fog-100 transition-colors hover:border-signal hover:text-signal"
+              >
+                <Github className="h-3.5 w-3.5" aria-hidden />
+                Source
+                <ArrowUpRight className="h-3 w-3" aria-hidden />
+              </a>
+            )}
+            {project.walkthroughUrl && (
+              <a
+                href={project.walkthroughUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} video walkthrough`}
+                className="inline-flex items-center gap-1.5 rounded-md border border-cyan/40 bg-cyan/5 px-3 py-1.5 font-mono text-xs text-cyan transition-colors hover:border-cyan hover:bg-cyan/10"
+              >
+                <Youtube className="h-3.5 w-3.5" aria-hidden />
+                Walkthrough
+                <ArrowUpRight className="h-3 w-3" aria-hidden />
+              </a>
+            )}
+          </div>
         )}
       </div>
 
-      {featured && project.hasVideo && (
+      {featured && project.videoKey && (
         <div className="mt-8 lg:mt-0 lg:self-center">
-          <YouTubeEmbed videoId={site.walkthroughVideoId} title={`${project.title} walkthrough`} compact />
+          <YouTubeEmbed
+            video={site.videos[project.videoKey]}
+            title={`${project.title} walkthrough`}
+            placeholderLabel="walkthrough video coming soon"
+            compact
+          />
           <p className="mt-3 font-mono text-xs text-fog-500">
             ▶ demo: blocking a prompt-injection attempt in real time
           </p>

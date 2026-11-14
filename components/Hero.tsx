@@ -13,10 +13,11 @@ export default function Hero() {
           </p>
 
           <h1 className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight text-fog-100 sm:text-5xl lg:text-6xl">
-            From customer service to{" "}
+            {site.headline.lead}{" "}
             <span className="bg-gradient-to-r from-signal to-cyan bg-clip-text text-transparent">
-              securing the cloud.
-            </span>
+              {site.headline.accent}
+            </span>{" "}
+            {site.headline.tail}
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-fog-300">{site.tagline}</p>

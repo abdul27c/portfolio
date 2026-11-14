@@ -6,11 +6,12 @@ A fast, dark-mode, terminal-editorial portfolio landing page for a Cloud Securit
 
 ## Sections
 
-1. **Hero** – career-transition headline, core focus (Python, AWS, Terraform, Cloud Security, CI/CD, runtime security), CTAs.
-2. **Featured Projects** – AI Agent Security Proxy (with embedded walkthrough), InfraGuard, Cloud Cost Intelligence, AI Token Optimizer.
-3. **Video Walkthrough** – dedicated YouTube deep-dive with architecture / threat-modeling chapters.
-4. **Skills** – Cloud & Infrastructure, Languages & Scripting, Security & Compliance.
-5. **Contact / Footer** – GitHub, LinkedIn, email.
+1. **Hero** – "Securing AI Systems & Cloud Infrastructure at Scale", core focus tags, CTAs.
+2. **About / Introduction** – embedded recruiter intro video (placeholder until a video is set).
+3. **Featured Projects** – AI Agent Security Proxy (flagship, embedded walkthrough), InfraGuard, Cloud Cost Intelligence (with Walkthrough link), AI Token Optimizer.
+4. **Video Walkthrough** – dedicated YouTube deep-dive with architecture / threat-modeling chapters.
+5. **Skills** – Cloud & Infrastructure, Languages & Scripting, Security & Compliance.
+6. **Contact / Footer** – GitHub, LinkedIn, email.
 
 ## Getting started
 
@@ -30,12 +31,15 @@ All content lives in **`lib/site.ts`** — no need to touch components.
 
 | Field | What to change |
 | --- | --- |
-| `site.links.linkedin` | Your LinkedIn profile URL |
-| `site.links.email` | Your professional email |
-| `site.walkthroughVideoId` | The YouTube video ID (the part after `watch?v=`) |
-| `projects[].repo` | Direct links to each project repository |
+| `site.headline` / `site.tagline` | Hero copy |
+| `site.links` | GitHub, LinkedIn and email |
+| `site.videos.intro` | Recruiter intro video (About section) |
+| `site.videos.agentProxyWalkthrough` | AI Agent Security Proxy walkthrough (project card + walkthrough section) |
+| `projects[].repo` | "Source" button link for each project |
+| `projects[].walkthroughUrl` | Optional "Walkthrough" button next to "Source" |
 
-Until a real video ID is set, the video areas render a "coming soon" placeholder instead of a broken embed.
+Video slots accept either a bare YouTube ID or any YouTube URL (`youtu.be/…`, `youtube.com/watch?v=…`, `/embed/…`, `/shorts/…`).
+Leave a slot as `""` and it renders a **Coming soon** placeholder in the same 16:9 frame, so adding the video later doesn't change the layout.
 
 ## Project structure
 
@@ -48,6 +52,7 @@ app/
 components/
   Nav.tsx           # sticky nav + mobile menu (client)
   Hero.tsx          # headline, focus tags, CTAs, terminal card
+  Intro.tsx         # About / recruiter intro video
   Projects.tsx      # project grid
   ProjectCard.tsx
   VideoSection.tsx  # walkthrough section
@@ -57,6 +62,7 @@ components/
   SectionHeading.tsx
 lib/
   site.ts           # all editable content
+  youtube.ts        # YouTube URL/ID parser
 tailwind.config.ts  # ink / fog / signal / cyan palette, mono + sans fonts
 next.config.ts      # security headers, image domains
 ```

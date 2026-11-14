@@ -9,10 +9,10 @@ export default function Skills() {
     <section id="skills" className="scroll-mt-14 border-t border-ink-800 py-20 sm:py-28">
       <div className="container-x">
         <SectionHeading
-          index="03"
+          index="04"
           label="skills"
           title="Technical positioning"
-          description="Customer-facing roles taught me to diagnose problems under pressure and explain them clearly. I now apply that to cloud infrastructure and security."
+          description="The tooling and practices I use to design, ship and defend cloud workloads — from infrastructure as code to runtime controls."
         />
 
         <div className="grid gap-5 md:grid-cols-3">

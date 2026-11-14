@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 const contacts = [
   { label: "GitHub", value: "github.com/abdul27c", href: site.links.github, icon: Github, external: true },
-  { label: "LinkedIn", value: "linkedin.com/in/…", href: site.links.linkedin, icon: Linkedin, external: true },
+  { label: "LinkedIn", value: "linkedin.com/in/abdallahhatem", href: site.links.linkedin, icon: Linkedin, external: true },
   { label: "Email", value: site.links.email, href: `mailto:${site.links.email}`, icon: Mail, external: false },
 ];
 
@@ -12,7 +12,7 @@ export default function Footer() {
     <footer id="contact" className="scroll-mt-14 border-t border-ink-800 bg-ink-900/40">
       <div className="container-x py-20 sm:py-24">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal">
-          <span className="text-fog-500">04 /</span> contact
+          <span className="text-fog-500">05 /</span> contact
         </p>
         <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
           Let&apos;s build systems that are secure by default.

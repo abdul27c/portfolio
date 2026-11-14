@@ -26,7 +26,7 @@ export default function VideoSection() {
     <section id="walkthrough" className="scroll-mt-14 border-t border-ink-800 bg-ink-900/40 py-20 sm:py-28">
       <div className="container-x">
         <SectionHeading
-          index="02"
+          index="03"
           label="walkthrough"
           title="AI Agent Security Proxy — deep dive"
           description="A recorded walkthrough of the system: architecture, threat model, and a live demo of guardrails stopping real attack patterns."
@@ -34,7 +34,11 @@ export default function VideoSection() {
 
         <figure>
           <div className="rounded-lg border border-ink-700 bg-ink-950 p-2 sm:p-3">
-            <YouTubeEmbed videoId={site.walkthroughVideoId} title="AI Agent Security Proxy — architecture & threat-modeling walkthrough" />
+            <YouTubeEmbed
+              video={site.videos.agentProxyWalkthrough}
+              title="AI Agent Security Proxy — architecture & threat-modeling walkthrough"
+              placeholderLabel="walkthrough video coming soon"
+            />
           </div>
           <figcaption className="mt-4 font-mono text-xs text-fog-500">
             <span className="text-signal">#</span> architecture breakdown · threat modeling · live attack demo

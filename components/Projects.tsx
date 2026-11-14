@@ -7,7 +7,7 @@ export default function Projects() {
     <section id="projects" className="scroll-mt-14 border-t border-ink-800 py-20 sm:py-28">
       <div className="container-x">
         <SectionHeading
-          index="01"
+          index="02"
           label="projects"
           title="Featured engineering work"
           description="Security tooling built around one idea: make the secure path the default path — at build time, deploy time and runtime."

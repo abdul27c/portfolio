@@ -5,6 +5,7 @@ import { Menu, Terminal, X } from "lucide-react";
 import { site } from "@/lib/site";
 
 const items = [
+  { href: "#about", label: "about" },
   { href: "#projects", label: "projects" },
   { href: "#walkthrough", label: "walkthrough" },
   { href: "#skills", label: "skills" },
