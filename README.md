@@ -34,7 +34,8 @@ All content lives in **`lib/site.ts`** — no need to touch components.
 | `site.headline` / `site.tagline` | Hero copy |
 | `site.links` | GitHub, LinkedIn and email |
 | `site.videos.intro` | Recruiter intro video (About section) |
-| `site.videos.agentProxyWalkthrough` | AI Agent Security Proxy walkthrough (project card + walkthrough section) |
+| `site.videos.agentProxyQuick` | AI Agent Security Proxy quick walkthrough (flagship project card) |
+| `site.videos.agentProxyDeepDive` | AI Agent Security Proxy deep dive (walkthrough section) |
 | `projects[].repo` | "Source" button link for each project |
 | `projects[].walkthroughUrl` | Optional "Walkthrough" button next to "Source" |
 

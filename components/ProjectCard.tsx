@@ -79,12 +79,12 @@ export default function ProjectCard({ project, featured = false, className = "" 
         <div className="mt-8 lg:mt-0 lg:self-center">
           <YouTubeEmbed
             video={site.videos[project.videoKey]}
-            title={`${project.title} walkthrough`}
+            title={`${project.title} — quick walkthrough`}
             placeholderLabel="walkthrough video coming soon"
             compact
           />
           <p className="mt-3 font-mono text-xs text-fog-500">
-            ▶ demo: blocking a prompt-injection attempt in real time
+            ▶ quick walkthrough · full deep dive below
           </p>
         </div>
       )}

@@ -24,8 +24,9 @@ export const site = {
    * stays identical either way.
    */
   videos: {
-    intro: "",
-    agentProxyWalkthrough: "",
+    intro: "https://youtu.be/8naDV7cW6SA",
+    agentProxyQuick: "https://youtu.be/LXFk68zRJkg",
+    agentProxyDeepDive: "https://youtu.be/bPwDpjVR-XU",
   },
 } as const;
 
@@ -57,7 +58,7 @@ export const projects: Project[] = [
     ],
     stack: ["FastAPI", "Pydantic", "Docker", "GitHub Actions", "OWASP LLM"],
     repo: "https://github.com/abdul27c",
-    videoKey: "agentProxyWalkthrough",
+    videoKey: "agentProxyQuick",
   },
   {
     id: "infraguard",
