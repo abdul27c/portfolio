@@ -35,8 +35,8 @@ export default function VideoSection() {
         <figure>
           <div className="rounded-lg border border-ink-700 bg-ink-950 p-2 sm:p-3">
             <YouTubeEmbed
-              video={site.videos.agentProxyWalkthrough}
-              title="AI Agent Security Proxy — architecture & threat-modeling walkthrough"
+              video={site.videos.agentProxyDeepDive}
+              title="AI Agent Security Proxy — deep dive: architecture & threat modeling"
               placeholderLabel="walkthrough video coming soon"
             />
           </div>
